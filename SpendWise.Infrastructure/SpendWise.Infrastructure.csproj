@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+      <ProjectReference Include="..\SpendWise.Application\SpendWise.Application.csproj" />
+      <ProjectReference Include="..\SpendWise.Domain\SpendWise.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.1.89" />
+      <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.14" />
+      <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="10.0.14" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.14" />
+      <PackageReference Include="Npgsql" Version="10.0.3" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
+      <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+</Project>

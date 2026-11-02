@@ -1,0 +1,2 @@
+'use client'; import {useEffect,useState} from 'react'; import {usePathname,useRouter} from 'next/navigation'; import {Loading} from '@/components/ui/Loading';
+export default function DashboardLayout({children}:{children:React.ReactNode}){const [ready,setReady]=useState(false);const router=useRouter();const path=usePathname();useEffect(()=>{if(!localStorage.getItem('spendwise.accessToken'))router.replace('/login');else setReady(true)},[router,path]);if(!ready)return <Loading/>;return children;}

@@ -1,0 +1,2 @@
+import {Sidebar} from './Sidebar';
+export function AppShell({children,title,description,action}:{children:React.ReactNode;title:string;description:string;action?:React.ReactNode}){return <div className="app-shell"><Sidebar/><main className="main-area"><header className="page-header"><div><div className="eyebrow">SPENDWISE / PERSONAL FINANCE</div><h1>{title}</h1><p>{description}</p></div>{action}</header><div className="page-content">{children}</div><footer className="footer">Made for mindful money management <span>•</span> SpendWise</footer></main></div>}

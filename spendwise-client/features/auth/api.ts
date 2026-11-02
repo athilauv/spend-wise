@@ -1,0 +1,5 @@
+import { api } from '@/lib/api-client'; import type { AuthResponse, User } from '@/types/api';
+export async function login(email:string,password:string) { const result=await api<AuthResponse>('/api/auth/login',{method:'POST',body:JSON.stringify({email,password})}); const access=result.accessToken ?? result.token; if (!access) throw new Error('Login response did not include an access token. Check AuthResponse field names in the API.'); localStorage.setItem('spendwise.accessToken',access); if(result.refreshToken) localStorage.setItem('spendwise.refreshToken',result.refreshToken); return result; }
+export async function register(fullName:string,email:string,password:string) { return api<AuthResponse>('/api/auth/register',{method:'POST',body:JSON.stringify({fullName,email,password})}); }
+export async function me() { return api<User>('/api/users/me'); }
+export function logout(){ localStorage.removeItem('spendwise.accessToken'); localStorage.removeItem('spendwise.refreshToken'); window.location.href='/login'; }
